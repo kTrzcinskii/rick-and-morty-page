@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Black.ttf");
+    font-style: normal;
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-BlackItalic.ttf");
+    font-style: italic;
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Bold.ttf");
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Italic.ttf");
+    font-style: italic;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Light.ttf");
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-LightItalic.ttf");
+    font-style: italic;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-Thin.ttf");
+    font-style: normal;
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("/public/fonts/Lato-ThinItalic.ttf");
+    font-style: italic;
+    font-weight: 200;
+  }
 }
