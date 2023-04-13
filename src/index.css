@@ -64,3 +64,13 @@
     font-weight: 200;
   }
 }
+
+@layer components {
+  .header-background {
+    background: linear-gradient(
+      120deg,
+      theme("colors.green.DEFAULT") 49.7%,
+      theme("colors.blue") 49.7%
+    );
+  }
+}
