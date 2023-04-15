@@ -3,7 +3,7 @@ import ImageSection from "./ImageSection";
 
 const MainContainer: React.FC = () => {
   return (
-    <main className='w-full relative flex flex-col justify-center items-center mt-[2.563rem]'>
+    <main className='w-full relative flex flex-col justify-center items-center mt-[2.563rem] lg:flex-row lg:items-start lg:justify-evenly lg:mt-[6.875rem]'>
       <ImageSection />
       <EpisodesSection />
     </main>
