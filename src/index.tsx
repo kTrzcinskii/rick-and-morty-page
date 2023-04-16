@@ -4,6 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ViewportProvider } from "./hooks/useViewport";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { API_ENDPOINT } from "./utils/constants";
+
+const apolloClient = new ApolloClient({
+  uri: API_ENDPOINT,
+  cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,7 +18,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ViewportProvider>
-      <App />
+      <ApolloProvider client={apolloClient}>
+        <App />
+      </ApolloProvider>
     </ViewportProvider>
   </React.StrictMode>
 );
