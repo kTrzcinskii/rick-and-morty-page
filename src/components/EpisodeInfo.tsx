@@ -7,7 +7,7 @@ const Seperator: React.FC = () => {
   );
 };
 
-export type Episode = {
+type Episode = {
   episode: string;
   name: string;
   airDate: string;
@@ -52,3 +52,39 @@ const EpisodeInfo: React.FC<EpisodeInfoProps> = ({
 };
 
 export default EpisodeInfo;
+
+interface LoadingEpisodeInfoProps {
+  index: number;
+  showSeperator?: boolean;
+}
+
+export const LoadingEpisodeInfo: React.FC<LoadingEpisodeInfoProps> = ({
+  showSeperator = true,
+  index,
+}) => {
+  const { width } = useViewport();
+  //only divs as it is just a "decoration" of the page
+  return (
+    <li className='w-full relative flex flex-col space-y-[1.125rem] lg:flex-row '>
+      <div className='w-full font-bold space-y-[0.563rem] flex flex-col lg:flex-row lg:space-y-0 lg:min-h-[6.625rem]'>
+        <div className='w-full max-w-[7.5rem] h-[1.688rem] relative flex items-center'>
+          <div className='bg-dark rounded-xl h-[0.625rem] w-[5.313rem]' />
+        </div>
+        {showSeperator && width >= DESKTOP_WIDTH && <Seperator />}
+        <div className='space-y-[0.563rem] lg:ml-[1.813rem] w-full relative'>
+          <div className='w-full max-w-[22.625rem] h-[1.688rem] relative flex items-center'>
+            <div
+              className={`${
+                index % 2 === 0 ? "bg-blue" : "bg-green-dark"
+              } rounded-xl h-[1.188rem] w-full`}
+            />
+          </div>
+          <div className='w-full max-w-[10.625rem] h-[1.406rem] relative flex items-center'>
+            <div className='bg-gray rounded-xl h-[0.5rem] w-full' />
+          </div>
+        </div>
+      </div>
+      {showSeperator && width < DESKTOP_WIDTH && <Seperator />}
+    </li>
+  );
+};
